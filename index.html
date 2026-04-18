@@ -1,4 +1,4 @@
-n<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,11 +6,13 @@ n<!DOCTYPE html>
 <title>Buraimoh Bryant | Portfolio</title>
 
 <style>
+
 /* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 /* BODY */
@@ -18,17 +20,15 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #ffffff;
-    overflow-x: hidden;
 }
 
-/* NAVIGATION BAR */
+/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
 }
@@ -36,83 +36,68 @@ nav {
 .logo {
     font-size: 20px;
     font-weight: bold;
-    letter-spacing: 2px;
     color: #00f5d4;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    transition: 0.3s ease;
+    color: #fff;
 }
 
 nav ul li a:hover {
     color: #00f5d4;
 }
 
-/* HERO SECTION */
-.container {
+/* SECTIONS */
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #00f5d4;
+}
+
+/* HERO */
+.hero {
     height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-    animation: fadeIn 1.5s ease-in-out;
 }
 
 h1 {
-    font-size: 55px;
-    margin-bottom: 15px;
+    font-size: 50px;
     background: linear-gradient(to right, #00f5d4, #00bbf9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-    font-size: 20px;
-    color: #dcdcdc;
-    margin-bottom: 30px;
-}
-
-hr {
-    width: 60%;
-    border: 1px solid #00f5d4;
-    margin: 25px 0;
-    opacity: 0.6;
+    margin: 15px 0;
+    color: #ccc;
 }
 
 /* BUTTONS */
-.buttons {
-    margin-top: 20px;
-}
-
 .btn {
-    text-decoration: none;
-    padding: 12px 28px;
+    padding: 12px 25px;
     margin: 10px;
     border-radius: 30px;
+    text-decoration: none;
     font-weight: bold;
-    transition: 0.3s ease;
-    display: inline-block;
 }
 
 .primary {
     background: #00f5d4;
-    color: #000;
-}
-
-.primary:hover {
-    background: #00bbf9;
-    transform: translateY(-3px);
+    color: black;
 }
 
 .secondary {
@@ -120,88 +105,223 @@ hr {
     color: #00f5d4;
 }
 
-.secondary:hover {
+/* ABOUT */
+.about p {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.skills {
+    margin-top: 30px;
+}
+
+.skills span {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+/* PROJECTS */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.project {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+/* CONTACT */
+.contact p {
+    margin-bottom: 20px;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact button {
+    padding: 12px;
     background: #00f5d4;
-    color: #000;
-    transform: translateY(-3px);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
-    background: rgba(0,0,0,0.4);
-    font-size: 14px;
+    background: rgba(0,0,0,0.5);
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* RESPONSIVE */
-@media(max-width: 768px) {
-    h1 {
-        font-size: 38px;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAVBAR -->
 <nav>
     <div class="logo">BB</div>
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="about html.html">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<!-- HERO SECTION -->
-<div class="container">
-
+<!-- HERO -->
+<section id="home" class="hero">
     <h1>Buraimoh Bryant</h1>
-
-    <div class="subtitle">
-        Creative Developer | Graphic Designer | Digital Innovator
-    </div>
-
-    <hr>
-
-    <p style="max-width:600px; line-height:1.6; color:#e0e0e0;">
-        I design and develop clean, modern, and impactful digital experiences.
-        My passion is transforming ideas into visually engaging and functional solutions
-        that help brands stand out and grow.
+    <p class="subtitle">Creative Developer | Graphic Designer | Digital Innovator</p>
+    <p>
+        I specialize in building modern, responsive, and visually engaging digital experiences.
+        My work focuses on blending creativity with functionality to deliver high-quality solutions.
     </p>
 
-    <hr>
-
-    <div class="buttons">
-        <a href="#" class="btn primary">View Projects</a>
-        <a href="#" class="btn secondary">Hire Me</a>
+    <div>
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#contact" class="btn secondary">Hire Me</a>
     </div>
+</section>
 
-</div>
+<!-- ABOUT -->
+<section id="about" class="about">
+    <h2>About Me</h2>
+
+    <p>
+        I am a creative and detail-oriented developer with a strong passion for web development 
+        and digital design. I enjoy transforming ideas into real-world digital solutions that 
+        are both functional and visually appealing.
+        <br><br>
+        Over time, I have developed skills in building responsive websites, designing graphics, 
+        and creating user-friendly interfaces. I constantly learn new technologies and improve 
+        my craft to stay relevant in the fast-changing tech world.
+        <br><br>
+        My goal is to work with individuals and businesses to help them build a strong digital 
+        presence and achieve their goals through technology and design.
+    </p>
+
+    <div class="skills">
+        <h3>My Skills</h3>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Responsive Design</span>
+        <span>Graphic Design</span>
+        <span>UI/UX</span>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>My Projects</h2>
+
+    <div class="projects-container">
+
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>
+                A personal portfolio website designed to showcase my skills, projects, and experience.
+                Built with clean UI and responsive layout.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>E-commerce Website</h3>
+            <p>
+                Developed a simple online store interface with product listings, pricing, 
+                and user-friendly navigation.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>School Management UI</h3>
+            <p>
+                Designed a dashboard interface for managing student records, attendance, 
+                and results.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Graphic Design Projects</h3>
+            <p>
+                Created logos, flyers, posters, and branding materials for businesses 
+                and personal brands.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Landing Page Design</h3>
+            <p>
+                Built modern landing pages for marketing campaigns with strong visual appeal 
+                and call-to-action sections.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+
+    <p>
+        Interested in working with me or have a project in mind? 
+        Fill the form below and I’ll respond quickly via WhatsApp.
+    </p>
+
+    <form id="whatsappForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send via WhatsApp</button>
+    </form>
+
+    <p style="margin-top:20px;">
+        Or contact me directly on WhatsApp: <br>
+        <strong>09069236013</strong>
+    </p>
+</section>
 
 <!-- FOOTER -->
 <footer>
     © 2026 Buraimoh Bryant | All Rights Reserved
 </footer>
+
+<script>
+document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    let phoneNumber = "2349069236013";
+
+    let whatsappMessage = `Hello, my name is ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+
+    let url = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+    window.open(url, "_blank");
+});
+</script>
 
 </body>
 </html>
